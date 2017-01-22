@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="deep learning," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="这是Deep Learning的一片科普之作。​    没有冗长的代码，没有看不懂的图，就是唠唠DL。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="deep learning for beginner">
+<meta property="og:url" content="http://yoursite.com/2017/01/22/deep-learning-for-beginner/index.html">
+<meta property="og:site_name" content="Closer">
+<meta property="og:description" content="这是Deep Learning的一片科普之作。​    没有冗长的代码，没有看不懂的图，就是唠唠DL。">
+<meta property="og:image" content="http://ok6k0yytv.bkt.clouddn.com/key-deep-learning-breakthrough-in-20161.jpg">
+<meta property="og:updated_time" content="2017-01-22T14:32:25.757Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="deep learning for beginner">
+<meta name="twitter:description" content="这是Deep Learning的一片科普之作。​    没有冗长的代码，没有看不懂的图，就是唠唠DL。">
+<meta name="twitter:image" content="http://ok6k0yytv.bkt.clouddn.com/key-deep-learning-breakthrough-in-20161.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/22/deep-learning-for-beginner/"/>
+
+
+
+
+
+  <title> deep learning for beginner | Closer </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Closer</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Just_coloser</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/22/deep-learning-for-beginner/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="高小飒">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Closer">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Closer" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                deep learning for beginner
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-22T22:32:55+08:00">
+                2017-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/01/22/deep-learning-for-beginner/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/22/deep-learning-for-beginner/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="这是deep-learning的一片科普之作"><a href="#这是Deep-Learning的一片科普之作。" class="headerlink" title="这是Deep Learning的一片科普之作。"></a>这是Deep Learning的一片科普之作。</h4><p>​    没有冗长的代码，没有看不懂的图，就是唠唠DL。</p>
+<p><img src="http://ok6k0yytv.bkt.clouddn.com/key-deep-learning-breakthrough-in-20161.jpg" alt=""></p>
+<a id="more"></a>
+<h5 id="可以从这里了解到的是"><a href="#可以从这里了解到的是" class="headerlink" title="可以从这里了解到的是"></a>可以从这里了解到的是</h5><ul>
+<li>深度学习(deep learning)的诞生和发展历程</li>
+<li>深度学习有什么优势？可以完成怎样的任务？</li>
+<li>深度学习的前景预测</li>
+</ul>
+<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>​    首先不得不提到的一个词是，人工智能（Artificial Intelligence），即AI。</p>
+<p>​    自从人工智能最早在19世纪的幻想小说中，就激发人们对未来的无限畅想。于是，一群不同领域（数学，心理学，工程学，经济学和政治学）的专家走到了一起，开始讨论制造人工智能的可能性。1956被确立为一个学科。后来，在人们的不断摸索下，渐渐地划分出了几个子领域：演绎、推理和解决问题，自然语言处理，知觉，情感分析等。曾经有一段人工智能发展的黄金年代。那还是在1956年达特茅斯会议之后的十年，对于许多人来说，这一阶段开发出来的程序堪称神奇，计算机可以解决代数问题，证明几何问题，学习和使用英语。当时的人们无法想象机器可以如此的“智能”，研究者们也都普遍带有乐观的情绪，认为具有完全智能的机器可以在二十年之后出现。</p>
+<blockquote>
+<p>1970年，Marvin Minsky：“在三到八年的时间里我们将得到一台具有人类平均智能的机器。”</p>
+</blockquote>
+<p>​    然而，在七十年代的初期，AI遇到了瓶颈，即使是最杰出的AI程序也不能解决他们尝试解决的问题中最简单的一部分。AI的研究者们遭遇到了无法克服的基础性障碍。尽管某些障碍后来被成功突破，但是许多至今都无法满意的解决。</p>
+<p>​    时间的车轮却从未停息，许多的问题还没有解决，他们的研究者们却在遗憾中奉献了一生。</p>
+<p>​    AI的年纪已经半百，发展中有过繁荣，也有低谷；有很多专家系统等研究成果的出现，也离我们想要的还很远。</p>
+<p>​    深度学习是AI的一个分支。1989年，<a href="https://zh.wikipedia.org/wiki/%E6%89%AC%C2%B7%E5%8B%92%E4%B8%98%E6%81%A9" target="_blank" rel="external">扬·勒丘恩</a>（Yann LeCun）等人开始将1974年提出的标准<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95" target="_blank" rel="external">反向传播算法</a><a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0#cite_note-WERBOS1974-12" target="_blank" rel="external">[12]</a>应用于深度神经网络，这一网络被用于手写邮政编码识别。尽管算法可以成功执行，但计算代价非常巨大，神经网路的训练时间达到了3天，因而无法投入实际使用<a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0#cite_note-LECUN1989-13" target="_blank" rel="external">[13]</a>。许多因素导致了这一缓慢的训练过程，其中一种是由<a href="https://zh.wikipedia.org/w/index.php?title=%E4%BA%8E%E5%B0%94%E6%A0%B9%C2%B7%E6%96%BD%E5%AF%86%E5%BE%B7%E8%83%A1%E4%BC%AF&amp;action=edit&amp;redlink=1" target="_blank" rel="external">于尔根·施密德胡伯</a>（<a href="https://en.wikipedia.org/wiki/J%C3%BCrgen_Schmidhuber" target="_blank" rel="external">Jürgen Schmidhuber</a>）的学生<a href="https://zh.wikipedia.org/w/index.php?title=%E8%B5%9B%E6%99%AE%C2%B7%E9%9C%8D%E5%85%8B%E8%B5%96%E7%89%B9&amp;action=edit&amp;redlink=1" target="_blank" rel="external">赛普·霍克赖特</a>（<a href="https://en.wikipedia.org/wiki/Sepp_Hochreiter" target="_blank" rel="external">Sepp Hochreiter</a>）于1991年提出的梯度消失问题。</p>
+<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><p>​    多年之后，深度学习的概念由Hinton等人于2006年提出。基于深度置信网络(DBN)提出非监督贪心逐层训练算法，为解决深层结构相关的优化难题带来希望，随后提出多层自动编码器深层结构。              </p>
+<blockquote>
+<p>深度学习是机器学习研究中的一个新的领域，其动机在于建立、模拟人脑进行分析学习的神经网络，它模仿人脑的机制来解释数据，例如图像，声音和文本。</p>
+</blockquote>
+<p>​    在这短短几年时间里，深度学习颠覆了语音识别、图像分类、文本理解等众多领域的算法设计思路，渐渐形成了一种从训练数据出发，经过一个端到端（end-to-end）的模型，然后直接输出得到最终结果的一种新模式。这不仅让一切变得更加简单，而且由于深度学习中的每一层都可以为了最终的任务来调整自己，最终实现各层之间的通力合作，因而可以大大提高任务的准确度。随着大数据时代的到来以及GPU等各种更加强大的计算设备的发展，深度学习如虎添翼，可以充分利用各种海量数据（标注数据、弱标注数据或者仅仅数据本身），完全自动地学习到抽象的知识表达，即把原始数据浓缩成某种知识。</p>
+<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>​    优势有很多。不像平常的编写程序需要自己寻找特征规律，而深度学习需要的是自己搭建一个合适的人工神经网络，并且给他大量的数据进行练习，他会自己在不断的错误中进行自我调参，从而是自身的模型更加的精准，更加具有预测性。很好的例子就是AlphaGo。</p>
+<h4 id="前景"><a href="#前景" class="headerlink" title="前景"></a>前景</h4><p>​    自从像Google等大公司开源了自家的深度学习框架之后，深度学习的入门门槛大幅度的降低。可以预见的是，今后，随着大数据和GPU加速学习的发展，深度学习会成为很多领域的第一选择。在行业技术颠覆的时代，DL（深度学习）会和越来越多的行业形成交叉点。在近十年内，应该可以保持领先的地位。（以上纯属个人见解）</p>
+<h4 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h4><ul>
+<li><p>[深度学习–维基百科]: <a href="https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0</a></p>
+</li>
+<li><p>[zouxy09的专栏]: <a href="http://blog.csdn.net/zouxy09/article/details/8775360/" target="_blank" rel="external">http://blog.csdn.net/zouxy09/article/details/8775360/</a></p>
+</li>
+<li><p>[国内计算机视觉公司主页]: <a href="http://www.dressplus.cn/index.html" target="_blank" rel="external">http://www.dressplus.cn/index.html</a></p>
+</li>
+<li><p>[深度学习的现状]: <a href="http://www.cnblogs.com/jhding/p/5687549.html" target="_blank" rel="external">http://www.cnblogs.com/jhding/p/5687549.html</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/22/python_v1.0/" rel="next" title="Python_v1.0">
+                <i class="fa fa-chevron-left"></i> Python_v1.0
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/22/deep-learning-for-beginner/"
+           data-title="deep learning for beginner" data-url="http://yoursite.com/2017/01/22/deep-learning-for-beginner/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="高小飒" />
+          <p class="site-author-name" itemprop="name">高小飒</p>
+          <p class="site-description motion-element" itemprop="description">我喜欢一切不彻底的事物。琥珀里的时间，微暗的火，一生都在半途而废，一生都怀抱热望。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#这是deep-learning的一片科普之作"><span class="nav-number">1.</span> <span class="nav-text">这是Deep Learning的一片科普之作。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可以从这里了解到的是"><span class="nav-number">1.1.</span> <span class="nav-text">可以从这里了解到的是</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发展"><span class="nav-number">3.</span> <span class="nav-text">发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优势"><span class="nav-number">4.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前景"><span class="nav-number">5.</span> <span class="nav-text">前景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文件"><span class="nav-number">6.</span> <span class="nav-text">参考文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">高小飒</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yourname"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
